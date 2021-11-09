@@ -3,18 +3,17 @@ library(dplyr)
 library(tidyverse)
 
 
-# Livro Vermelho Mamiferos ------------------------------------------------
+# Livro Vermelho Mamiferos (712 sp) --------------------------------------
 
 livro_vermelho <- read_csv("./Working_tables/livro_vermelho_mamiferos_nosubespecies.csv")
 which(duplicated(livro_vermelho$Species))
 
-# Paglia et al. 2012 & ----------------------------------------------------
+# Paglia et al. 2012 (701 sp) --------------------------------------------
 
 paglia <- read_csv("./Working_tables/Paglias_etal_2012.csv")
 
 lv_paglia <- left_join(livro_vermelho, paglia, by="Species")
 #write.csv(lv_paglia, "./Working_tables/livro_vermelho_paglia.csv")
-
 
 # Soria et al. 2021 -------------------------------------------------------
 
